@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    
+    </script>
+</head>
+<body>
+    <button id="btn1">네이버</button>
+    <button id="btn2">다음</button>
+    <button id="btn3">구글</button>
+   <button id="btn4">이전으로</button>
+   <select name="sel" id="sel">
+       <option value="" class="sel_item">선택안함</option>
+       <option value="https://www.naver.com" class="sel_item">네이버</option>
+       <option value="https://www.daum.net" class="sel_item">다음</option>
+       <option value="https://www.google.com" class="sel_item">구글</option>
+     <!-- 1. 속성 : location.href = / 여기서 부터 메소드: location.assign(경로기입) /location.replace() / history.back():이전으로/  history.go(-1):이전으로 / .history.forward(): 다음으로 / .history.go(1): 다음으로 -->
+   </select>
+   <script>
+    document.getElementById("sel").addEventListener("click",function(){
+       location.href=this.value; 
+    });//셀렉트 태그 아이디가 이벤트 핸들러이고, 이에대한 행위는 클릭 , 클릭의 기능은 location(url).href(경로)는 (=) "https://www.naver.com" 
+    document.getElementById("btn1").addEventListener("click",function(){
+       location.href = "https://www.naver.com"; 
+    });
+    document.getElementById("btn2").addEventListener("click",function(){
+       location.assign("https://www.daum.net");
+    });
+    document.getElementById("btn3").addEventListener("click",function(){
+       location.replace("https://www.google.co.kr"); 
+    });//replace()는 맨 처음 페이지로 못돌아감, 삭제해버림
+    document.getElementById("btn4").addEventListener("click",function(){
+       history.back(); 
+    }); 
+    document.write("<h2>history 객체</h2>");
+    for(var key in history){ 
+        document.write(key+history[key]+"<br>");
+    }
+       
+    document.write("<h2>location 객체</h2>");
+    for(var key in location){ 
+        document.write(key+location[key]+"<br>");
+    }
+    </script>
+</body>
+</html>

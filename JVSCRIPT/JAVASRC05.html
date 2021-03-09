@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05</title>
+    <script>
+        //산술연산자
+        var a ="kim";
+        var b = 10;
+        var c = 3;
+        var d = a+b;
+        var e = b-c;
+        var f = b*c;
+        var g = b/c;
+        var h = b%c;
+        var b1 =20;
+        var c1 =9;
+        var a1
+        var data = true;
+         //논리연산 및 비교연산//
+        document.write("b :"+b+", c :"+c+"<br>");
+        document.write("b1 > c1 :"+(b1>c1)+"<br>");//b1이 c1보다 크면 true
+        document.write("b1 < c1 :"+(b1<c1)+"<br>");//b1이 c1보다 크면 false
+        document.write("b1 == c1 :"+(b1==c1)+"<br>");//b1이 c1랑 같다. false
+        document.write("b1 != c1 :"+(b1!=c1)+"<br>");//b1이 c1이 아니다. true
+        document.write("b1 >= 10 :" +(b1>=10)+"<br>");
+        document.write("b1 =< 10 :" +(b1<=10)+"<br>");
+        document.write("!a1:"+(!a1)+"<br>"); //문자열 "!a1" 의미: a1아니다. 연산자!a1 의 !의미는 없다.;값이 없으면 !(not)연산
+        document.write("b1>=20 && c1 >=10 :"+(b1>=20 && c1>=10)+"<br>");//and 연산
+        document.write("b1>=20 || c1 >=10 :"+(b1>=20 || c1>=10)+"<br>");//or 연산
+        document.write("b1>=20 & c1 >=10 :"+(b1>=20 & c1>=10)+"<br>");//and 연산 2진수 연산 0 은 거짓
+        document.write("b1>=20 | c1 >=10 :"+(b1>=20 | c1>=10)+"<br>");//or 연산 2진수 연산 1은 참
+        document.write("b1^5: "+(b1^5)+"<br>");//10진수를 2진수로 바꾼 후 더해서 나온 값 1의 값을 10진수로 바꾼 후 더한 값. xor 연산
+        document.write("b1>>2 :"+(b1>>2)+"<br>");//b1을 2진수로 바꾼 후 나누기를 2번한 값 기존 2진수를 ">"개수 만큼 뒤로 밀어주면 됨(끝의 2의0승은 삭제처리 되고 앞의 2의 1승이 차지하게 됨), 2진수 우측 shift 연산
+        document.write("b1<<2 :"+(b1<<2)+"<br>");//b1을 2진수로 바꾼 후 곲하기를 2번한 값 기존 2진수를 "<"개수 만큼 앞으로 밀어주면 됨(끝의 2의0승은 값이 없어지게 됨으로 0으로 채워줌.),2진수 좌측 shift 연산
+        /*데이터타입*/
+        function fnc1() { alert("배부르다");}
+        var arr1=["kim",100,95,10];//배열은 var 변수명 =[ ]
+        var obj1={name:"kim",k:100,m:95,s:10};//객체는 var 변수 명 ={ }
+        document.write("a의 타입:"+(typeof a)+"<br>");
+        document.write("b의 타입:"+(typeof b)+"<br>");
+        document.write("data의 타입:"+(typeof data)+"<br>");
+        document.write("arr1의 타입:"+(typeof arr1)+"<br>");
+        document.write("obj1의 타입:"+(typeof obj1)+"<br>");
+        document.write("a의 글자수:"+(a.length)+"<br>");
+        document.write("arr1의 요소의 개수:"+(arr1.length)+"<br>");
+        document.write("obj1의 요소의 개수:"+(obj1.length)+"<br>");//이거 말고 아래 거로 해야 함:결과값 찾을 수 없음
+        document.write("obj1의 속성??:"+(obj1.name)+"<br>");
+        /*변수명이나 함수명,객체명은 예약어(키워드)를 사용하지 않음.
+        변수명이나 함수명,객체명은 반드시 영문소문자로 시작해야 하며, 끝이나 중간에 숫자 조합도 가능하고 , 중간에 띄워쓸 수없다.
+        변수명은 언더바(_)나 달러($)로 시작하거나 중간에 넣을 수 있고, 그 밖의 특수문자는 활용하지 못한다(다 산술연산 등에 쓰여서) 
+        상수는 영문 대문자 스네이크 표기법을 사용한다.
+        변수명이나 함수명 ,객체명은 여러 단어를 활용할 경우 영문 스네이크 표기법(헝가리언) 또는 카멜케이스를 사용한다.
+        스네이크표기법: this_object_atrribute
+        상수 스네이크표기법: THIS_object_atrribute [첫 단어는 대문자로]
+        카멜표기법: this_Object_Atrribute [두번째 단어부터 첫음절만 대문자로 표기]*/
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

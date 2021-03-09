@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트09-bom객체</title>
+    <!--r객체 사용자 정의 객체, 내장객체
+    내장객체 - 자바스크립트에 미리 내장되어 정해져 있는 객체
+    내장객체의 종류 bom 객체, dom객체(html), 데이터객체(데이터타입, 미디어객체)
+    bom객체 브라우저를 나타내는 것으로 window, screen, location, navigator, history,, document
+    dom객체 document에 속하는 element (태그 )
+    이벤트: 사용자의 행위 시에 어플리케이션이 어떻게 반응할지 지정
+    >>한줄 마저 쓰기
+    이벤트는 이벤트핸들러(이벤트를 받는 객체)와 이벤트리스너(이벤트 행위)와 이벤트타겟(이벤트의 지배를 받는 객체)등으로 구성
+    
+    document.getElementbyId("hd").addEventListener("onclick",function(){
+        document.getElementbyId("img").style.color = "red";
+     //모든 객체는 속성과 메서드가 있으며, 내장객체는 그 속성과 메서드도 정해져 있으므로 정해진 것만 활용 , 때로는 하위 객체를 포함할 수도 있다.   
+        
+    });-->
+    <script>
+ /*   for (var key in window){
+        document.write(key+":"+window[key]+"<br>")
+    }*/
+    document.getElementById("btn1").function("click",function(){
+       window.open("","",""); 
+    });
+    </script>
+</head>
+<body>
+    <button id="gtn1"> 버튼 </button>
+</body>
+</html>

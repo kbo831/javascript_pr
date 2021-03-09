@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 13-데이터 객체 </title>
+    <!--데이터 객체: Date, number, math, 불린(산술논리 boolean, string 문자/
+    referance(참조형 : array 배열, Set, Map/ Eorror는 예외처리 해줘야함
+    
+    범용메소드  
+    isfinite 수가 있냐 없냐 수가 있으면 진실 엇으면 거짓
+    isnan 수가 없냐 있냐 없으면 진실 있으면 거짓 (계산이 가능하냐 계산이 불가능하니 ; not a number )
+    isFinite()
+    isNaN()
+    parseFloat()
+    parsInt()
+    escape()//암호화1
+    encodeURI()//암호화2
+    encodeURIComponent()//암호화3
+    unescape()//해독화1
+    unescape()//해독화1
+    decodeURI()//해독화2
+    decodeURIComponent()//해독화3
+    decodeURIComponent()//해독화3
+    주의! 주소 전달시 암호화 해독화 필수!
+    
+    범용데이터 객체는 .을 사용하지 않음
+    -->
+    <script>
+    var esc1= escape(location.href);
+    var esc2= encodeURI(location.href);
+    var esc3= encodeURIComponent(location.href);
+        document.write(esc1);
+        document.write(esc2+"<br>");
+        document.write(esc3+"<br>");
+        document.write(unescape(esc1)+"<br>");
+        document.write(decodeURI(esc2)+"<br>");
+        document.write(decodeURIComponent(esc3)+"<br>");
+    var f1=3.123123;
+    var i1 =1004;
+    var a1= 1004;
+    var a2;
+        document.write(parseInt(f1)+"<br>"); //3 소수를 정수화 
+        document.write(parseFloat(i1)+"<br>");//1004 정수를 실수로
+        document.write(parseFloat(f1)+"<br>");//3.123123 실수로
+        document.write(isFinite(a1/0)+"<br>");// false; 계산후 값 즉 수가 없으면 false , 있으면 true
+        document.write(isFinite(a1/10)+"<br>");//
+        document.write(isNaN(a2/0)+"<br>"); // 연산이 불가능하니? 불가능은 true, 가능은 false;
+        document.write(isNaN(a1/10)+"<br>");// 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

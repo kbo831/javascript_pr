@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>시계랑 달력만들기</title>
+</head>
+<body>
+    <div id="watch">
+        
+    </div>
+    <script>
+     /*조건을 실행해줄 태그를 가져오기*/
+        var watch = document.getElementById("watch");  
+        wat();
+    /*조건을 포함할 전체 function 함수명을 설정*/
+        function wat(){
+       
+       /* 여기 안에 지역변수를 설정해서 시계의 초기화 조건을 풀이해 줌
+        필요조건 *현재시각을 가져 올 값 1) 현재시간 2)분 3)초 */
+            var cur= new Date();
+            var h=cur.getHours();
+            var m=cur.getMinutes();
+            var s=cur.getSeconds();
+            var am= "am"; // 문자열 
+        /*조건 설정해주기 :적용순서대로 조건주기*/
+            if(h>=12){ am = "pm"; }
+            if(h>12){ h = h-12; }
+            if(m<10){ m="0"+m; }
+            if(s<10){ s="0"+s; }
+             watch.innerHTML= "<h2> 시각은"+am+":"+h+"시"+m+"분"+s+"초 입니다 <br>";
+            /*특정요소지칭해서 출력하려면 document.innerHTML 이나 innerTEXT를 써야 함*/
+        }
+        
+      setInterval(function(){wat();},1000);
+    </script>
+    <div class="cal">
+        
+    </div>
+    <script>
+    
+        function cd(){
+            /*출력장소 변수설정*/
+            var cl = document.getElementById("cal");
+            var cur_date01= new Date(); // 현재 날짜 기준
+            // 인덱스 번호는 0부터 시작해서 월(달)도 0부터 시작하므로 기준 변수에 +1을 해줌
+            var month = cur_date01.getMonth()+1;
+            /* 이달의 첫째 날로 숫자date 설정해주기*/
+            cur_date01.setDate(1); // 현재 달의 숫자의 날짜는 1이 된다.
+            
+   
+            
+            
+            /*끝나는 마지막날을 결정하려면 기준점을 다음달 1일에서 -1을 빼는 것으로 잡아준다*/    
+            var cur_date02= new Date(); //마지막 날짜 기준
+            //다음달을 기준변수를 가져와서 설정해주기
+            
+            
+        }
+    </script>
+</body>
+</html>

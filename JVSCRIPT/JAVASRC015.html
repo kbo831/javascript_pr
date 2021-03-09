@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date 설정</title>
+    <script>
+    var d1 = new Date(); // 날짜가 정해지지 않으면 현재를 데이터를 표시해 줌 
+    var d2 = new Date('may 16,2021,17:22:23'); 
+    var d3 = new Date('2021/05/16/17:22:10');
+        
+    var year=d1.getFullYear(); // d1.의 년만 가지고 나타내 줌
+    var month=d1.getMonth()+1; // d1.의 월만 순서는 0부터니까 +1을 해줘야 한다.
+    var day=d1.getDate(); // 일을 나타냄 예) 3일 
+    var weekday = d1.getDay(); // 요일을 나타 냄 ex) 일요일[0] ,월요일[1], 화요일[2]... 순으로
+    var hour = d1.getHours(); //시간을 나타 냄 
+    var minute = d1.getMinutes(); // 분
+    var Second = d1.getSeconds(); // 초
+   
+        
+    /*d2의 기존 설정을 아래처럼 바꿔 줌 : 항상 초기화값을 설정해 줘야 함  */    
+    d2.setFullYear(2020); // 2021--> 2020년
+    d2.setMonth(3);//  5월 --> 3월
+    d2.setDate(2);// 16일--> 2일
+    d2.setHours(13); //17시 --> 13시
+    d2.setMinutes(20); // 22분 --> 20분
+    d2.setSeconds(30); // 23초 --> 30초 
+        
+    var week; //초기화 값
+    //var weekday = d1.getday(); --> 요일을 나타 냄   weekday의 요일을 배열 정의 해줌   
+    switch (weekday){
+        case 0 :
+            week = "일";
+            break;
+            
+        case 1:
+            week = "월";
+            break;
+        
+        case 2:
+            week = "화";
+            break;
+            
+        case 3 :
+            week = "수";
+            break;
+            
+        case 4:
+            week = "목";
+            break;
+        
+        case 5:
+            week = "금";
+            break;
+            
+        case 6:
+            week = "토";
+            break;
+            
+    } 
+        document.write("<h2>현재는"+year+"년"+month+"월"+day+"일"+week+"요일 입니다"+"<br>" );
+        document.write(d1+"<br>");
+        document.write(d1.toString()+"<br>"); //문자형태로 출력
+        document.write(d1.toDateString()+"<br>");//  요일로          
+        document.write(d1.toTimeString()+"<br>");  //시간으로  
+   
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

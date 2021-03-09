@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <style>
+        *{ padding:0 ; margin: 0; }
+        body,html {  width: 100%; }
+        ul { list-style: none; }
+        a {text-decoration: none; }
+        clr:after{ content:""; display:block; clear:both; }
+        .wrap { width: 420px; margin: 0 auto; padding-top: 100px; }
+        .btn_box {width: 420px; height:600px; background-color: #fbad31;  border-radius: 20px;}
+        .btn_box li { width: 380px; }
+        .btn_box li.item00 { width:420px; height:200px; position:relative;  }
+        #ip{  width: 380px; position:absolute; left:18px; top: 50%; margin-top: -50px; line-height: 120px; text-align: right; padding-right: 20px; box-sizing: border-box;;}
+
+        .btn_box input { display: block; width: 95px; height: 95px;   float:left; outline: 0; border:1px solid #ddd ; border-radius: 50px; margin-bottom: 2px; cursor: pointer; font-size: 30px;}
+       
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="bg_wrap">
+            <ul>
+                <li class="item00"><input type="text" name="clac" class="input" id="ip" value="0" >
+            </ul>
+            <ul class="btn_box">
+                </li>
+                <li class="item01"><input type="button" value="%"></li>
+                <li class="item02"><input type="button" class="multi" value="*"></li>
+                <li class="item03"><input type="button"  class="divi" value="/"></li>
+                <li class="item04"><input type="button" class="back" value="c"></li>
+              
+                <li class="item05"><input type="button" value="1"></li>
+                <li class="item06"><input type="button" value="2"></li>
+                <li class="item07"><input type="button" value="3"></li>
+             
+                <li class="item08"><input type="button" value="4"></li>
+                <li class="item09"><input type="button" value="5"></li>
+                <li class="item10"><input type="button" value="6"></li>
+               
+                <li class="item12"><input type="button" value="7"></li>
+                <li class="item13"><input type="button" value="8"></li>
+                <li class="item14"><input type="button" value="9"></li>
+                <li class="item15"><input type="button" value="0"></li>
+                <li class="item16"><input type="button" value="-"></li>
+                <li class="item17"><input type="button" value="+"></li>
+               
+                <li class="item19"><input type="button" class="equal" value="="></li> 
+                <li class="item20 "><input type="button" class="reset" value="reset"></li>
+            </ul>
+        </div>
+        <script>
+           
+            function input(){
+                var result = document.getElementsByClassName("input")
+                var btn = document.getElementsByTagName("button")[0];
+                var reset = document.getElementsByClassName("reset")[0];                
+                var equal = document.getElementsByClassName("equal")[0];
+
+                function rst(){ }
+                reset.addEventlisener("click",function(){
+                    input[txt].value = 0;
+                
+                });
+              
+               
+            }
+            
+            
+        /*
+        아날로그 폰트 추천; 계산기 화면
+        폼태그를 사용 했을 경우 
+        form 요소에 value 값 지정가능  document.forms['폼이름'] 또는 [폼이름1][폼이름2:control name] // 변수선언
+            0. input의 이름을 사용해서 변수를 선언해 준다. 
+            1. reset 버튼과 = 버튼을 뺀 나머지 버튼은 누르면 input 텍스트 창에 입력이 된다. 
+            2. reset 버튼을 누르면 텍스트 입력창은 0이 된다.
+        예외처리 : try{기본정상내용;} catch(error){ 오류일 때 실행되는 부분};   //상태코드: 4로 시작하면 오류 ( 4로 시작되는 오류 처리하려고 하는 것 )
+        */
+        </script>
+    </div>
+</body>
+</html>

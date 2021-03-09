@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트: 네비게이터 (브라우저) </title>
+    <!--벤더 제작사/ 앱코드네임 크롬은 넷스케이프/ 엔진이름(브라우저를 만드는 기법) gecko 
+    운영체제(platform) /*navigator.platform, nabigator.userAgent, appName,*/
+    -->
+    <script>
+    document.write("<h2>navigator &amp; screen</h2>");
+        for(var key in navigator){ //객체 출력
+           document.write(key+navigator[key]+"<br>");
+    }//브라우저 코드명
+    document.write("appCodeName: " + navigator.appCodeName,"<br/>");
+    //브라우저 버전정보 
+    document.write("appVersion : " + navigator.appVersion, "<br/>")
+        
+    //브라우저 이름 인덱스오브 어디에 위치해있는지 찾는 메소드 못찾으면 -1 거짓, 
+    // 네비게이터의 userAgent의 브라우저 안의 내용을 소문자로 고친 후에 .indexOf()에 브라우저 명을 입력해야 소문자로 전부 검색이 된다. 
+    var agent = navigator.userAgent.toLocaleLowerCase(); 
+    if(agent.indexOf("chrome") != -1){
+        alert("크롬입니다");
+    }//
+    else if(agent.indexOf("firefox") != -1){
+        alfer("현재 브라우저는 파이어 폭스");
+    }    
+        
+    else if(agent.indexOf("safari") != -1){
+        alfer("현재 브라우저는 사파리");
+    }    
+    else if(agent.indexOf("opera") != -1){
+        alfer("현재 브라우저는 오페라");
+    }  
+     else if(agent.indexOf("whale") != -1){
+        alfer("현재 브라우저는  웨일");
+    } 
+       
+    else if(agent.indexOf("edge") != -1){
+        alfer("현재 브라우저는 엣지");
+    } 
+    var palt = navigator.platform.toLocaleLowerCase();
+    if(palt.indexOf("win") != -1){// "!= -1" 은 "-1(거짓)이 아니면"
+        alert(" window 입니다"); //mac, linux,unix
+    } 
+        
+    //디바이스 알아내기 ( 모바일, 태블릿, 데스크탑 확인)
+        
+    /*var mobile= ['iPHone','iPod','BlackBerry','Android','Window CE','LG','MOT','SAMSUNG','SonyEricsson']
+    var device = "desktop";
+        for(var key in mobile){//모바일
+            if(navigator.userAgent.match(mobile[key])!=null){
+            device = "mobile" ;
+            break;
+            }
+        }
+        if(navigator.userAgent.indexOf('iPad')!= -1){//태블릿
+            device = "ipad";
+        } else if (navigator.userAgent.indexOf('shw-')!=-1){
+            device ="tab";
+        }
+        if(device=="desktop"){
+            location.href ="desktop.html";
+        } else if(divece=="mobile") {
+            location.href ="mobile.html";            
+        } else { location.href = "tablet.html"} */
+        
+        //태블릿:ipad / shw-:개탭 location(url).href 주소창
+        //https://zetawiki.com/wiki/모바일웹_스마트폰_기종_확인
+        /*scree객체 속성과 메서드 : 오리엔테이션 모바일방향/availheight 주소창 때문에 이용가능한 높이가 작다. 
+        모든 태그들이 BOM 객체*/
+    
+        for(var key in screen){
+           documet.write(key+":"+screen[key]+"<br>"); 
+        }
+    </script>    
+</head>
+<body>
+
+    
+
+</body>
+</html>

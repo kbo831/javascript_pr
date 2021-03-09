@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+    <title>STRING 값</title>
+    <SCRIPT>
+        var str = ' yeah Hello Great'; 
+
+        console.log("글자 수 :", str.length); //17개 (공백 수까지 포함해서 계산)
+        console.log(" 인덱스가 특정 번째인 글자 추출 :" + str.charAt(5)); // 글자의 인덱스 번호가 5번째인 거 추출)
+        console.log("문자열 결합: " + str.concat('김태은'));// str의 뒤에다가 concat을 사용해서 김태은을 더해 줌 :  yeah Hello Great 김태은 으로 출력 
+        console.log("특정문자나 단어의 위치" + str.indexOf("l")); //  처음 나오는 "l"의 인덱스 번호를 출력
+        console.log("특정문자나 단어의 위치" + str.indexOf("1")); // 찾을 수 없음
+        console.log("특정문자나 단어가 포함된 여부" + str.includes('Hello'));
+        console.log("특정문자나 단어가 포함된 여부" + str.includes('kim'));
+        console.log("특정 마지막 문자나 단어의 위치 :" + str.lastIndexOf("5")); //  특정글자 5의 마지막 순번의 값을 출력해라 없으면 거짓(false) = -1 
+        console.log("특정 마지막 문자나 단어의 위치 :" + str.lastIndexOf("l")); // 따라서 "l"의 마지막 순번 째 값은 9가 나옴
+        console.log(str.lastIndexOf("o",5));// u~공백포함 앞에서 5번째까지의 범위 중 o를 찾아서 출력, 없기때문에 -1 
+        console.log(str.replace("Hello","Good morning")); //Hello를 Good morning 으로 대체 
+        console.log("특정 구분기호로 문자열을 배열요소로 변환"+ str.split(' '));//공백으로 요소를 구분해 배열로 나열, 출력값은 yeah, Hello, Great
+        console.log(str.substring(1,7));// 공백포함 1번째 글자에서 7번째 글자까지를 보여 줌. // 공백 yeah 
+        console.log(str.substring(-2));// 맨 뒤의 기점을 벗어난 2개의 글자공간에서 시작해 앞의 첫 번째까지 나타내줌; 출력 값이 ' yeah Hello Great'전체 내용이 출력 된다.  
+        console.log(str.substr(3,6)); // 3초과 6미만 사이의 글자만 출력 ; ah Hel
+        console.log(str.slice(0,5));// 0~5번 째 글자 이후는 잘라 줌 ; 출력 값 : 공백yeah
+        console.log(str.slice(-5));// 뒤에서 앞으로 5번째 글자값 이외에 잘라줌 : Great 
+        console.log(str.toUpperCase()); // 대문자로 바꿔 줌 
+        console.log(str.toLocaleLowerCase());// 소문자로 바꿔 줌
+        console.log(str.trim(),str.trim().length); // 앞뒤 빈 여백을 제외한 문자의 개수 ;  16개
+        console.log(str.repeat(3)); // str 을 3번 반복해 줌 
+
+      
+
+
+    </SCRIPT>
+</head>
+<body>
+    <P>   console.log(str.lastIndexof('o', 5));
+        CONCAT 문자의 결합 / 인덱스는 중복되면 첫번째 값을 찾음. 스플릿은 공백  쪼개다 ; 트림은 앞뒤 공백을 제거  거짓이면 -1  인덱스값이 0부터 해서 </P> 
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>반복처리문</title>
+    <script>
+    var arr = [["kim",10,20,30],["lee",20,30,40],["park",40,50,60],["sin",50,60,70,80],["ha",20,50,60]];//[대괄호]안의 "n,m"은 첨자 혹은 반복변수
+    var tot = [0,0,0,0]; //arr[0][0] 이차항변
+    var cnt = arr.length;
+    console.log(cnt);
+        //for (변수의 설정 및 초기값부여; 조건식;증감식) { 반복실행문장; } -조건식이 맞는 동안만 실행
+    for(var n=0;n<cnt;n++){//n=0 1번째 값 n은 index값이여서 cnt 보다 작아야함 cnt의 5번째 순번은 index(4);줄 순서를 말함
+        for(var m=0;m<3;m++){//m은 ["kim",10,20,30]에서 10,20,30의 순서
+            tot[m]+=arr[n][m+1];
+        }//무한 루프 처리법; for(;;){ 무한루프실행문; }
+        
+    }
+    console.log("국어점수합계: "+tot[0],+", 영어접수합계:"+tot[1],",수학점수합계:"+tot[2]);  
+        
+    var hap = [0,0,0,0];
+    var obj =[{name:"kim",kor:10,eng:20,mat:30},{name:"lee",kor:20,eng:30,mat:40},{name:"park",kor:40,eng:20,mat:30},{name:"sin",kor:10,eng:20,mat:30},{name:"ha",kor:60,eng:70,mat:30}];
+    for(var n;n<cnt;n++){
+        if(n==1) { continue; }//continue 건너뛰어라의 의미
+        hap[0]=obj[n].kor;//0,1,2 는 국어 영어 수학을 세는 번호 순서이고 obj뒤에 .
+        hap[1]=obj[n].eng;
+        hap[2]=obj[n].mat;
+        if(n==3) { break; }//break 실행중지 ; continue와 break는 실행제어기능을 가짐
+    }
+    console.log("국어점수합계: "+hap[0],", 영어접수합계:"+hap[1],",수학점수합계:"+hap[2]);
+        
+    /*for,while,do-while 문은 조건과 증감식이 계속 만족되거나 생략되면, [무한 루프에 빠짐, 한 조건이 무한 반복됨]
+    do-while문 :do { 실행문; } while(조건식){실행문;}: 무조건 1번은 실행을 해야 할 때  //무한반복식은 0보다 크게 조건을 주거나 조건생략*/
+        var w_arr = [100, 60, 90, 70];
+        var w_tot = 0;
+        var k=0;
+        while(k<w_arr.length){
+            w_tot+=w_arr[k];
+            k++;           
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

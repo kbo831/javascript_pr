@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트08:99단 여기까지 사용자정의 객체들</title>
+    <script>
+    var a = 2 ;
+    var b = 1 ;
+    var result = 0;
+    
+    for(var a =2 )
+        
+     function class1 () {
+        this.name = "kim";
+        this.kor = 100;
+        this.eng = 95;
+        this.mat =100;
+        this.tot = function() { return this.kor+this.eng+this.mat; }
+        this.avg = function() { return (this.kor+this.eng+this.mat)/3;}
+    }   
+        //
+        var st1 = new class1();//인스턴스 st1
+        st1.name = "lee";
+        st1.kor = 90;
+        document.write(st1);
+        document.write("score of"+st1.name+"'s is"+st1.tot()+"<br>");
+         var st2 = new class1();//인스턴스 st1
+        st1.name = "sin";
+        st1.eng = 100;
+        document.write("score of"+st1.name+"'s is"+st1.tot()+"<br>");
+        
+        //2번째 클래스 선언문 
+        function(){ //클래스 class2
+            this.name = "kim";
+            this.kor = "100";
+            this.mat = "90";
+        }
+        class2.prototype.tot = function() {return this.kor+this.mat; }
+        /*클래스 선언문3 : 아주중요 생성자 방식
+            class 클래스이름{
+            생성자함수이름(매개변수){//클래스 이름과 생성자 함수는 같게 
+            this.프로퍼티1 = 매개변수;}
+            aptjem(){ }
+            }
+            */
+      /*  class class3 { 
+            class3(){//클래스 이름과 생성자 함수는 같게
+                this.name = "kim"; 
+            }
+            class3(name){
+                this.name= name;                
+            }
+             class3(name,kor){
+                this.name= name;  this.kor=kor;              
+            }
+        }*/
+    </script>
+</head>
+<body>
+    <!--일반 객체는 일회성 /-->
+    
+<!--   클래스: 변수나 함수를 반복 선언하거나 벼도로 계속 추가하면, 기억장소의 낭비를 초래할 뿐만 아니라 실행 속도도 느려지며, 선언이 된 것인지 아닌지도 불분명해진다. 
+ 그러므로, 필요한 변수와 함수를 하나 이름으로 묶어서 효율적으로 관리하면, 새로 선언하지 않고 이미 선언한 내용만으로 계속해서 재사용할 수 있는데 이럴게 
+ 필요한 변수(속성)과 함수(메서드)를 하나의 이름인 클래스로 묶어 선언하고, 필요할 때 마다 생성하여 활용하는 것이 무엇보다 필요한데 이때 클래스로 부터 만들어진 객체를 
+ 인스턴스라고 한다.
+ 
+ 클래스 선언문 1 - 함수선언방식
+ function 클래스이름() { 
+     this.프로퍼티1 = 초기화값;
+    this.프로퍼티2 = 초기화값;
+    this.메서드1 = function(){     }
+    this.메서드1 = function(){     }
+    
+ }
+ var 인스턴스 변수명 = new 클래스이름();
+ 
+일반 객체는 일회성이다.  -->
+
+<!--클래스 선언문2 -프로토타입 방식
+function 클래스 이름() {
+this.프로퍼티1 =  초기값;
+this.프로퍼티2 =  초기값;
+}
+클래스이름.prototype.메서드1 = function(){  }
+클래스이름.prototype.메서드2 = function(){  }
+var 인스턴스 = new 클래스 이름();
+
+
+-->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number&Math_object_javascrip15 :데이터 객체</title>
+    <script>
+        var num1 = 3.14; 
+        var num2 = new Number("xyz");
+        var num3 = 43;
+        var num4 = 4300;
+        var objNum = new Number(3.141592);
+        //num2 objNum 은 랩퍼타입이라서 타입이 오브젝트임 ; 오브젝트(객체)를 넘버로 바꿔주는게 valueof()임
+
+        //true false 나오는 함수는 정보함수 
+        console.log("극소수", Number.EPSILON); //2.220446049250313e-16: 2.220446049250313의 10의 -256승
+        console.log("최소수", Number.MIN_VALUE);//5e-324
+        console.log("최대수", Number.MAX_VALUE);//1.7976931348623157e+308 : 10의 308승 
+        console.log("객체의 값1", Number("xyz"));// NaN 계산 불가 "xyz"는 문자열이니까 :문자는 "" 를 사용
+        console.log("객체의 값2", 1 * "string"); // 문자 곱하기 숫자도 계산 불가
+        console.log("객체 타입", typeof NaN);//NaN의 타입을 알려줘! : Number : Not a number
+        console.log("유한수입니까?", Number.isFinite(num1));// num1 은 3.14 니까 유한수 : true 
+        console.log("유한수입니까?", Number.isFinite(num2));// num2는 문자니까 수가 없다. false;
+        console.log("연산이 불가능합니까??", Number.isNaN(24/4));// 24 /4 =6 연산이 가능하다. false
+        console.log("연산이 불가능합니까??", Number.isNaN(0/0)); // 0 /0 0은 수가 아니여서 연산 불가 true
+        console.log("정수입니까?",Number.isInteger(num1)); // 소수 false
+        console.log("정수입니까?",Number.isInteger(num2));// 문자여서 false
+        console.log("정수입니까?",Number.isInteger(num3));// 43는 정수니까 true
+
+        console.log("num1을 문자로 변환", typeof num1.toString(),num1.toString());
+        // num1.toString() 넘1을 문자열로 바꿔 준 것의 typeof(타입) = string 타입 
+        console.log("num1을 반올림하여 소수점 3자리까지 표시",num1.toFixed(3)); 
+        //결과값은 3.140 : 소수점 네 번째 자리에서 반올림하면 세 번째까지 표시 됨
+        console.log("num4를 지수형태로 표시하되 숫자 두 글자로 변환", num4.toPrecision(2));
+        //num4는 4300이고 두 자리가 소수점으로 표시 되고 여기에 4300으로 만들어주기 위해 e의 3승(즉 10의 3승)을 해줘야함
+        //결과값은 4.3e+3
+        console.log(typeof num1, typeof objNum, typeof objNum.valueOf(), objNum.valueOf);
+        // 넘1의 타입은 숫자 number  objNUm 의 타입은 객체 object, objNum의 타입(객체)를 valueof를 사용해서 숫자로 바꿔 줌.
+        
+        //상수는 대문자로 씀 abs 앱솔루트 :  부호가 없다. (음수에 자주 사용 ,양수는 사용 안함)  random은 무작위수는 0~1까지 숫자 무작위 소환
+
+        console.log("원주용",Math.PI); // 변하지 않는 수 : 상수는 대문자로 기입
+        console.log("절대값",Math.abs(-120)); // abs 는 absolute를 의미하고 부호를 없애줘서 음수나 부호가 있는 수에 사용
+        console.log("반올림", Math.round(32.4), Math.round(32.5), Math.round(-32.4), Math.round(-32.5));
+        console.log("올림", Math.ceil(32.4), Math.ceil(-32.4), Math.ceil(32.6), Math.ceil(-32.6));
+        console.log("버림",Math.floor(32.4),Math.floor(32.6),Math.floor(-32.4),Math.floor(-32.6));
+        console.log("제곱근(루트)", Math.sqrt(64));
+        console.log("무작위수",Math.random());
+        console.log("10부터 30까지의 무작위수",(Math.random()*20)+10); // 끝수20 ,시작수 10 최대값은 30 
+        console.log("5의 3승 숫자 구하기",Math.pow(5,3));
+        console.log("최대값구하기",Math.max(1004,2080,1980));
+        console.log("최소값구하기",Math.min(1004,2080,1980));
+
+        //반지름이 20인 원의 둘레길이 면적  지름*3.14 운의 둘레 : 반지름 *2 *3.14; / 반지름 *반지름 *3.14 ;
+        var circle = (20*2)*Math.PI;
+        var circle2 = (new Number(20)*20)*Math.PI;
+        console.log("원의 둘레:",circle);
+        console.log("원의 넓이:",circle2);
+        console.log("정수로 나타내기 : ", parseInt(circle2));
+
+        for( var i = 0; i<6; i++){ // index번호는 0=1/ 1=2 /2=3/ 3=4 /5=6 /6=7/
+            console.log ( Math.random()*44 + 1 ); //d여기까지하면 소수점자리로 숫자가 출력됨  : 로또 숫자 45개
+            console.log ( parseInt(Math.random()*45 + 1 )); //정수로 바꿔줌 
+            console.log ( Math.floor((Math.random()*45 + 1 ))); // 소수점 버려줌
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

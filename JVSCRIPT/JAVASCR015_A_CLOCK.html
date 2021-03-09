@@ -1,0 +1,57 @@
+//초침 분침 6도씩 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 아날로그시계 </title>
+    <style>
+    #a_clock { width: 300px; height: 300px; border: 1px solid #444; border-radius: 160px; position:relative;}    
+    #sec,#hour,#minute { position: absolute;  top: 0; left: 0; margin-left: -7.5px; }
+     
+    </style>
+</head>
+<body>
+    <div id="a_clock">
+       <img src="./clock.png" alt="" id="base">
+       <img src="./clock_h.png" alt="" id="sec">
+       <img src="./clock_m.png" alt="" id="hour">
+        <img src="./clock_m.png" alt="" id="minute">
+       <!--<img src="" alt="" class="donut"> 이미지사이즈는 다 똑같이 300 300-->
+        
+    </div>
+    <script>
+  //태그를 입력해주고 아이디 불러와야함
+    function a_clock (){
+            var h =document.getElementById("hour");
+            var m =document.getElementById("minute");
+            var s =document.getElementById("sec");
+            /*var d=document.getElementById("donut");// 이거뭘까*/
+        
+            var cur = new Date();
+            var hh = cur.getHours();
+            var mm = cur.getMinutes();
+            var ss = cur.getSeconds();
+            if(hh>=12){ hh=hh-12;}
+            var hh_rotation = hh * 30;//1시간 마다 30도씩이니까 1시일 때 곱하기 30은 30도.// hh*30 + (mm/60*30) : mm이 30분일 때 시침은 1시와 1시의 사이에 와야하니까 1시간 움직이는 각도는 30도니까 30분이 지나면 15도가 추가 되야 함.
+            var mm_rotation = mm * 6; // 360나누기 
+            var ss_rotation = ss * 6; //
+            
+        h.style.transform = "rotate("+hh_rotation+"deg)";
+        m.style.transform = "rotate("+mm_rotation+"deg)";
+        s.style.transform = "rotate("+ss_rotation+"deg)";
+       /* d.style.transform = "rotate("+ss_rotation+"deg)";//이거를 돌려야함*/
+    }
+   setInterval(function(){a_clock();},1000);
+ 
+       
+      
+    </script>
+    <script>
+    function ac (){
+         
+        
+        
+    }
+    </script>
+</body>
+</html>

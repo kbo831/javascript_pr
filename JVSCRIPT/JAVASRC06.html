@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>if 조건문</title>
+     <script>
+    //초기화값
+    var name = "kim";
+    var kor = parseInt(prompt("국어점수 입력:[0-100]"));//prompt >>입력 parseInt 정수로 변환
+    var eng = parseInt(prompt("영어점수 입력:[0-100]"));
+    var mat = parseInt(prompt("수학점수 입력:[0-100]"));
+    var job = parseInt(prompt("직업코드를 입력해 주세요"));   
+    var tot = kor + eng + mat;
+    var avg = tot / 3;
+    var pan = true;
+    var pan2;
+    var kwalak;
+    var kwamok;
+    var hak;
+    var jick;
+         //단순 if문:if(조건식)실행문
+         if(tot<240) pan=false;
+         //if-else문: if (조건식) { 조건식이 참일 때 실행문} else { 조건식이 거짓일 때 실행문;}
+         if(avg>=80) { pan2="합격"; } else { pan2="탈락"; }
+         if(kor>70 && mat>70 && eng>70) { kwalak="합격"; } else { kwalak="과락"; }
+         if(kor>70 || mat>70 || eng>70) { kwamok="과목우수"; } else { kwamok="해당없음"; }
+         //if-else if else 문: if(조건식1){실행문1;} else if(조건식2) { 실행문2;}...else{실행문 n};
+         if(avg>=90){ 
+            hak="a";
+         } else if(avg>=80){
+            hak="b";
+         } else if(avg>=70){
+            hak="c";
+         } else if(avg>=60){
+            hak="d";
+         } else {
+            hak="집에가라"
+        }
+         
+        //중첩if문 
+         if(avg>=90) { 
+             if(avg>=96) { 
+                 hak="A+";
+             } else if(avg>=93) {
+                hak="A0";
+             } else {
+                hak="A-";
+             }
+        }
+        //switch-case문 : switch(기준변수) { case 값1: case 값1의 실행문; break; case 값2: case 값2의 실행문; break; ....default:실행문 n; }
+         switch (job){
+             case 0:
+                 jick="학생";
+                 break;
+             case 1:
+                 jick="주부";
+                 break;
+             case 2:
+                 jick="회사원";
+                 break;
+             default:
+                 jick="기타";   
+         }
+         document.write("당신의 이름은"+name+"이고,"+"<br>");
+         document.write("국어:"+kor+", 영어 :"+eng+",수학은"+mat+"입니다"+"<br>");
+         document.write("총점은"+tot+"이고, 평균은"+avg+"입니다.");
+         document.write("합격여부는"+pan2+",과락여부는"+kwalak+",과목우수여부는"+kwamok+"입니다"+"<br>");
+         document.write("학점은"+hak+"입니다."+"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
